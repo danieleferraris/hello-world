@@ -12,7 +12,7 @@ test <- data[-index,]
 
 library(rpart)
 
-x_rp <- rpart(y~.,data=train) 
+x_rp <- rpart(y~.-Value,data=train) 
 
 pred <- predict(x_rp,type="prob",newdata=test)
 pred <- as.data.frame(pred)
